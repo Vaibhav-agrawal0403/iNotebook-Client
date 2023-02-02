@@ -9,9 +9,7 @@ const Signup = (props) => {
 
     const handleSubmit = async(e)=>{
         e.preventDefault();
-        console.log('handlesubmit')
         const {name, email, password} = credentials
-        console.log(credentials)
         const response = await fetch(`${host}/api/auth/createuser`, {
             method: 'POST', 
             headers: {
@@ -51,6 +49,7 @@ const Signup = (props) => {
                 </div>
                 <div className="container-form">
                         <p className="text-center my-3"><i style={{cursor : 'initial'}}>New to iNotebook? 👇Create a new account here! </i></p>
+                        <form onSubmit={handleSubmit}>
                         <div className="mb-4 input-container">
                             <label htmlFor="name" className="form-label">Name</label>
                             <input type="text" className="form-control" id="name" name="name"  
@@ -62,12 +61,6 @@ const Signup = (props) => {
                             onChange={onChange} aria-describedby="emailHelp" />
                             <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                         </div>
-                        {/* <div className="mb-4 input-container">
-                            <label htmlFor="password" className="form-label">Password</label>
-                            <i className={`fa fa-eye${credentials.showPassword ? "-slash" : ""} view-password`} onClick={handleViewPassword}></i>
-                            <input type={credentials.showPassword ? 'text' : 'password'} className="form-control" id="password" name="password" 
-                            onChange={onChange} minLength={5} required />
-                        </div> */}
                         <div className="mb-4 input-container">
                             <label htmlFor="password" className="form-label">Password</label>
                             <div className="input-group">
@@ -79,10 +72,11 @@ const Signup = (props) => {
                                     </div>
                             </div>
                         </div>
+                        <div className="text-center">
+                                <button type="submit" className="btn btn-primary">SignUp</button>
+                        </div>
+                        </form>
                 </div>    
-                <div className="text-center">
-                        <button  className="btn btn-primary" onClick={handleSubmit} >SignUp</button>
-                </div>
                 <p className='text-center last-para mt-3'>Already have an account? <a href="/login">Login-&gt;</a> </p>
         </div>
     )
