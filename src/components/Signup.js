@@ -50,31 +50,31 @@ const Signup = (props) => {
                 <div className="container-form">
                         <p className="text-center my-3"><i style={{cursor : 'initial'}}>New to iNotebook? 👇Create a new account here! </i></p>
                         <form onSubmit={handleSubmit}>
-                        <div className="mb-4 input-container">
-                            <label htmlFor="name" className="form-label">Name</label>
-                            <input type="text" className="form-control" id="name" name="name"  
-                            onChange={onChange} aria-describedby="emailHelp" />
-                        </div> 
-                        <div className="mb-4 input-container">
-                            <label htmlFor="email" className="form-label">Email address</label>
-                            <input type="email" className="form-control" id="email" name="email" 
-                            onChange={onChange} aria-describedby="emailHelp" />
-                            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div className="mb-4 input-container">
-                            <label htmlFor="password" className="form-label">Password</label>
-                            <div className="input-group">
-                                    <input type={credentials.showPassword ? 'text' : 'password'} className="form-control" id="password" name="password"
-                                        value={credentials.password} onChange={onChange} />
-                                    
-                                    <div className="input-group-text" >
-                                        <i className={`fa fa-eye${credentials.showPassword ? "-slash" : ""} view-password`} onClick={handleViewPassword}></i>
-                                    </div>
+                            <div className="mb-4 input-container">
+                                <label htmlFor="name" className="form-label">Name</label>
+                                <input type="text" className="form-control" id="name" name="name"  
+                                onChange={onChange} aria-describedby="emailHelp" />
+                            </div> 
+                            <div className="mb-4 input-container">
+                                <label htmlFor="email" className="form-label">Email address</label>
+                                <input type="email" className="form-control" id="email" name="email" 
+                                onChange={onChange} aria-describedby="emailHelp" />
+                                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                             </div>
-                        </div>
-                        <div className="text-center">
-                                <button type="submit" className="btn btn-primary">SignUp</button>
-                        </div>
+                            <div className="mb-4 input-container">
+                                <label htmlFor="password" className="form-label">Password</label>
+                                <div className="input-group">
+                                        <input type={credentials.showPassword ? 'text' : 'password'} className="form-control" id="password" name="password"
+                                            value={credentials.password} onChange={onChange} minLength={5} required />
+                                        
+                                        <div className="input-group-text" >
+                                            <i className={`fa fa-eye${credentials.showPassword ? "-slash" : ""} view-password`} onClick={handleViewPassword}></i>
+                                        </div>
+                                </div>
+                            </div>
+                            <div className="text-center">
+                                    <button type="submit" className="btn btn-primary">SignUp</button>
+                            </div>
                         </form>
                 </div>    
                 <p className='text-center last-para mt-3'>Already have an account? <a href="/login">Login-&gt;</a> </p>
