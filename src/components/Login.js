@@ -81,7 +81,6 @@ function Login(props) {
             <div className='text-center'>
                 <button className="btn btn-primary" onClick={handleSubmit}>Login</button>
             </div>
-            <p className='text-center last-para mt-3'>Don't have an account? <a href="/signup">SignUp-&gt;</a> </p>
         </div>
     )
 }

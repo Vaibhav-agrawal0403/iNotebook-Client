@@ -77,7 +77,6 @@ const Signup = (props) => {
                             </div>
                         </form>
                 </div>    
-                <p className='text-center last-para mt-3'>Already have an account? <a href="/login">Login-&gt;</a> </p>
         </div>
     )
 }
